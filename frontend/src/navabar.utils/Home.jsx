@@ -25,12 +25,12 @@ const AutoImageSlider = () => {
   }, [images.length]);
 
   return (
-    <div className="flex justify-center rounded-full ">
+    <div className="flex justify-center border-2 mx-48 py-10">
       {/* Render the current image based on currentIndex */}
       <img 
         src={images[currentIndex]} 
         alt="Sliding" 
-        className=" rounded-lg object-cover w-50 h-[35rem]" 
+        className=" rounded-xl object-cover w-100  h-[35rem]" 
       />
     </div>
   );
@@ -51,8 +51,13 @@ const Home = () => {
           </button>
         
       </div>
+      
+      <div className="w-[100rem] mx-auto border-b-2 border-gray-200 mt-14 shadow-2xl"></div>
 
       <div className='mt-10'>
+        <div className='flex justify-center'>
+          <h1 className='mb-10 text-2xl font-semibold font-sans'>coffee that we serve</h1>
+        </div>
         <AutoImageSlider/>
       </div>  
     </div>
