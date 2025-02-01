@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom';  
 import { useState, useEffect} from 'react';
 
-
-
 const AutoImageSlider = () => {
   const images = [
     '../image-media/Americano-Coffee.jpg',
     '../image-media/cappuccino.jpg',
     '../image-media/cofee.jpg',
     '../image-media/espresso.jpg',
+    '../image-media/matcha_latte.webp',
+    '../image-media/latte.jpg',
+    '../image-media/Macchiato.webp'
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,20 +20,21 @@ const AutoImageSlider = () => {
     // Set an interval to change the image every 3 seconds (3000ms)
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); // Loop back to the first image after last
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div className="flex justify-center border-2 mx-48 py-10">
-      {/* Render the current image based on currentIndex */}
-      <img 
-        src={images[currentIndex]} 
-        alt="Sliding" 
-        className=" rounded-xl object-cover w-100  h-[35rem]" 
-      />
-    </div>
+    <div className="flex justify-center border-0 mx-2 md:mx-48 py-10 md:border-2">
+  {/* Render the current image based on currentIndex */}
+  <img 
+    src={images[currentIndex]} 
+    alt="Sliding" 
+    className="rounded-xl object-cover w-100 h-[30rem] sm:h-[35rem]" 
+  />
+</div>
+
   );
   
 };
@@ -56,10 +58,24 @@ const Home = () => {
 
       <div className='mt-10'>
         <div className='flex justify-center'>
-          <h1 className='mb-10 text-2xl font-semibold font-sans'>coffee that we serve</h1>
+          <h1 className='mb-10 text-2xl font-semibold font-sans'>coffee that we serve for you</h1>
         </div>
         <AutoImageSlider/>
       </div>  
+
+      <div className="flex gap-5 mt-28 mx-40">
+          <div className='bg-green-950 h-[550px] text-center font-sans'>
+            <img src="../image-media/Americano-Coffee.jpg" alt=""  className='w-[800px] h-[350px]'/>
+            <h1 className=' text-2xl font-bold text-[#D4E9E2] my-5'>Dreamy on Top</h1>
+            <p className='text-md text-[#D4E9E2]'>The new Creamy Pure Matcha Latte takes the matcha you know and love to new heights.</p>
+            <button className="border mt-5 font-bold px-5 py-1 rounded-full text-[#D4E9E2]  hover:bg-[#c0c0c049] hover:bg-opacity-50 transition-all duration-200 ease-in-out">Sip, sip, go</button>
+
+          </div>
+          <div className='h-[400px]'>
+            <img src="../image-media/Americano-Coffee.jpg" alt="" className='w-[800px] h-[350px]'/>
+            <h1 className='text-center'>hello</h1>
+          </div>
+      </div>
     </div>
     
   )

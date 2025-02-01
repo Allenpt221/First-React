@@ -6,7 +6,7 @@ import Menu from './navabar.utils/Menu'; // Menu component
 import About from './navabar.utils/About'; // About component
 import Contact from './navabar.utils/Contact'; // Contact component
 import SignUp from './navabar.utils/SignUp'; // SignUp component
-import Login from './navabar.utils/LogIn'; // Login component
+import LogIn from './navabar.utils/LogIn'; // Login component
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/lssogin" element={<Login />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </Router>
   );

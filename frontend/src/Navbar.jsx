@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const location = useLocation();
   const rightNav = [
     { name: 'Brand', to: '/' },
     { name: 'Home', to: '/home' },
@@ -27,11 +29,10 @@ const Navbar = () => {
       <ul className='flex gap-10 text-xl items-center'>
         {rightNav.map((item, index) => (
           <div className={item.name !== 'Brand' ? 'hidden lg:block' : ''}>
-              <li key={index} className={item.name === 'Brand' ? 'font-bold text-4xl' : 'hover:text-[#8B4513]'}>
+              <li key={index} className={item.name === 'Brand' ? 'font-bold text-4xl' : location.pathname === item.to  ? 'text-[#8B4513] font-semibold' : 'hover:text-[#8B4513]'}>
               <Link to={item.to}>{item.name}</Link>
               </li>
           </div>
-          
         ))}
       </ul>
 
@@ -63,7 +64,10 @@ const Navbar = () => {
       <div className='hidden lg:block'>
         <ul className='flex gap-10 text-xl items-center'>
           {leftNav.map((item, index) => (
-            <li key={index} className={item.name === 'Contact' ? 'border-black px-6 py-1 bg-black text-white rounded-3xl hover:text-black hover:bg-white transition duration-300 ease-in-out' : 'hover:text-[#8B4513]'}>
+            <li key={index} className={item.name === 'Contact' ? 
+                  'border-black px-6 py-1 bg-black text-white rounded-3xl hover:text-black hover:bg-white transition duration-300 ease-in-out' 
+                  : location.pathname === item.to  ? 'text-[#8B4513] font-semibold'
+                  : 'hover:text-[#8B4513]'}>
               <Link to={item.to}>{item.name}</Link>
             </li>
           ))}
