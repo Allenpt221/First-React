@@ -93,7 +93,7 @@ const AutoImageSlider = () => {
         {/* mid section */}
         <div className="grid grid-cols-1 gap-16 mt-10 mx-5 lg:mx-40 flex-2 lg:grid-cols-2">
             {coffeeProduct.map((item , keyItem) => (
-              <div key={keyItem} className={`bg-green-950 h-[550px] text-center font-sans ${item.id === 3 || item.id === 4 ? 'bg-[#D4E9E2] ': ''}`}>
+              <div key={keyItem} className={`bg-green-950 h-[550px] text-center font-sans ${item.id === 3 || item.id === 4 ? 'bg-[#363636e5] ': ''}`}>
                 <img src={item.image } alt=""  className=' lg:w-[800px] lg:h-[350px] w-[962px] h-[340px]' />
                 <h1 className={`text-2xl font-bold text-[#D4E9E2] my-5 ${item.id === 3 || item.id === 4 ? 'text-[#1E3932] ': ''}`}>{item.name}</h1>
                 <p className={`text-md text-[#D4E9E2] ${item.id === 3 || item.id === 4 ? 'text-[#1E3932] ': ''}`}>{item.name}</p>
