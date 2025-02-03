@@ -7,6 +7,7 @@ import About from './navabar.utils/About'; // About component
 import Contact from './navabar.utils/Contact'; // Contact component
 import SignUp from './navabar.utils/SignUp'; // SignUp component
 import LogIn from './navabar.utils/LogIn'; // Login component
+import Story from './navabar.utils/Story'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/story" element={<Story />} />
       </Routes>
     </Router>
   );
